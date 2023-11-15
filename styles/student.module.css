@@ -1,10 +1,9 @@
 .section {
-  max-width: 800px;
+  width: fit-content;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  color: #fff;
-
+  color: #000;
 }
 
 .heading {
@@ -33,7 +32,7 @@
   background-color: #333;
 }
 
-.content{
+.content {
   display: grid;
   grid-template-columns: 1fr [content-start] 1fr [content-end] 1fr;
   align-items: center;
@@ -42,7 +41,24 @@
   padding: 20px;
 }
 
-.content label{
+.content input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.content input:hover {
+  border: 1px solid #007bff;
+}
+
+.content label {
   text-align: end;
-  margin-right: 10px;
+  margin-right: 5px;
+}
+
+.content p {
+  text-align: start;
+  margin-left: 5px;
+  color: red;
 }

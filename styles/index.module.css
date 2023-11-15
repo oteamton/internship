@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@0:300;0:400;0:500;0:600;0:700;0:800;0:900;1:300;1:400;1:500;1:600;1:700;1:800;1:900");
+
+.container {
+  display: grid;
+  grid-template-columns: [left-start] 1fr [left-end] 1fr [center-start] 1fr [center-end] 1fr [right-start] 1fr [right-end];
+  grid-template-rows: [top-start] 0.2fr [top-end] 1fr [bottom-start] 1fr [bottom-end];
+  grid-gap: 5px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #5f5f5f;
+}
+
+.content_register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: left-end / center-start;
+  grid-row: top-end / bottom-start;
+  padding: 40px;
+  border-radius: 50% 50% 50% 50%;
+  background-color: #333;
+  color: #fff;
+  width: 220px; /* Adjust as needed for your design */
+  height: 220px; /* Adjust as needed for your design */
+}
+
+.content_register div{
+  display: flex;
+  justify-content: center;
+}
+
+.content_login {
+  grid-column: center-end / right-start;
+  grid-row: top-end / bottom-start;
+  display: grid;
+  grid-template-columns: 0.2fr [center-start] 1fr [center-end] 0.2fr;
+  background-color: rgb(94, 180, 202);
+  border-radius: 10px;
+}
+
+.content_login > * {
+  grid-column: center-start / center-end;
+}
+
+.content_login label{
+  text-align: start;
+}
+
+.heading {
+  color: #fff;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #e74c3c; /* Red */
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #dc3545; /* Darker shade of red */
+}
+
+.bodyStyle {
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+.container input{
+  /* padding: 10px 10px 10px 29px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.container input:hover {
+  border: 1px solid #007bff;
+}
+
+.error{
+  margin : 0;
+  color: red;
+}
