@@ -45,8 +45,8 @@ const CompanyRegistration: React.FC = () => {
 
                 </div>
 
-                <button type="submit" className={styles.button}>Submit</button>
-                <button type="button" onClick={() => window.history.back()} className={styles.button}>Cancel</button>
+                <button className={styles.button} type="submit" >Submit</button>
+                <button className={styles.button} type="button" onClick={() => window.history.back()} >Cancel</button>
             </form>
         </div>
     );

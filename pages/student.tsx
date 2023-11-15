@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import styles from '../styles/student.module.css';
 
 type FormValuesStudent = {
     username: string;
@@ -28,35 +29,29 @@ const StudentRegistration: React.FC = () => {
     };
 
     return (
-        <div>
-            <h1>Student Registration</h1>
+        <div className={styles.section}>
+            <h1 className={styles.heading}>Student</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                    <label htmlFor="username">Username:</label>
+                <div className={styles.content}>
+                    <label htmlFor="username">Username</label>
                     <input type="text" {...register('username')} />
                     <p>{errors.username?.message}</p>
-                </div>
 
-                <div>
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Email</label>
                     <input type="text" {...register('email')} />
                     <p>{errors.email?.message}</p>
-                </div>
 
-                <div>
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" {...register('password')} />
                     <p>{errors.password?.message}</p>
-                </div>
-
-                <div>
-                    <label htmlFor="confirmPassword">Confirm Password:</label>
+           
+                    <label htmlFor="confirmPassword">Confirm Password</label>
                     <input type="password" {...register('confirmPassword')} />
                     <p>{errors.confirmPassword?.message}</p>
                 </div>
 
-                <button type="submit">Submit</button>
-                <button type="button" onClick={() => window.history.back()}>Cancel</button>
+                <button className={styles.button} type="submit">Submit</button>
+                <button className={styles.button} type="button" onClick={() => window.history.back()}>Cancel</button>
             </form>
         </div>
     );
