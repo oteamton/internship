@@ -49,6 +49,7 @@
   /* position: relative; */
   grid-column: center-end / right-end;
   height: 100vh;
+  width: 100%;
 }
 
 .wrapper_partners h1 {
@@ -60,17 +61,28 @@
 .content_partners {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 20px;
+  height:200px;
+  width: 99%;
+  gap: 2rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .content_partners img {
-  max-height: 50px;
-  max-width: 50px;
+  max-width: 200px;
   border-radius: 50%;
-  padding: 40px;
   background-color: var(--safe-red);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  animation: conveyorAnimation 15s linear infinite; /* Adjust the animation duration */
+}
+
+@keyframes conveyorAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% * 5)); /* Assuming 5 images with a width of 140px each */
+  }
 }
 
 .wrapper_partners p {
@@ -189,7 +201,7 @@
   font-size: 1rem;
   height: 1.8rem;
   border: 1px solid #ccc;
-  border-radius: 0 1em 1em 1em;
+  border-radius: 1em 1em 1em 1em;
   outline: none;
   transition: border 0.3s ease;
 }
@@ -203,14 +215,13 @@
   color: red;
 }
 
-
-/* Add a subtle fade-in animation to sections */
+/* Animation for section fade in fade out */
 .fadeIn {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
 .fadeOut {
-  opacity: 0.3;
+  opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }

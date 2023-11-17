@@ -44,11 +44,11 @@ const Home: React.FC = () => {
       <section className={styles.wrapper_partners}>
         <h1>Partners</h1>
         <div className={styles.content_partners}>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" alt="1" />
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" alt="2" />
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" alt="3" />
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" alt="4" />
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" alt="5" />
         </div>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus tempora vitae fugit voluptatem ducimus, consequuntur vel eos magnam quo optio, repudiandae quisquam tenetur voluptates quis rem reprehenderit non ea. Neque.</p>
       </section>
