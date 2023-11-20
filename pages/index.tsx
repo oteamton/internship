@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoginValues } from '../interfaces';
 import { useForm, SubmitHandler, SubmitErrorHandler } from 'react-hook-form';
@@ -6,7 +6,6 @@ import Link from 'next/link';
 import * as yup from 'yup';
 import Layout from '../components/Layout';
 import styles from '../styles/index.module.css';
-import BackgroundImage from '../components/Pyramid_bg';
 
 const Home: React.FC = () => {
   const validationSchema = yup.object().shape({
@@ -42,15 +41,21 @@ const Home: React.FC = () => {
       </section>
 
       <section className={styles.wrapper_partners}>
-        <h1>Partners</h1>
+        <h1>About</h1>
         <div className={styles.content_partners}>
-          <img src="" alt="1" />
-          <img src="" alt="2" />
-          <img src="" alt="3" />
-          <img src="" alt="4" />
-          <img src="" alt="5" />
+
+          <div className={styles.content_img}>
+            <div className={styles.img}>
+              <img src="" alt="1" />
+              <img src="" alt="2" />
+              <img src="" alt="3" />
+              <img src="" alt="4" />
+              <img src="" alt="5" />
+            </div>
+          </div>
+
         </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus tempora vitae fugit voluptatem ducimus, consequuntur vel eos magnam quo optio, repudiandae quisquam tenetur voluptates quis rem reprehenderit non ea. Neque.</p>
+        <p>Welcome to SWU Internship <br /> This is an open source project </p>
       </section>
 
       <section className={styles.wrapper_login}>

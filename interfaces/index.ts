@@ -13,3 +13,14 @@ export type LoginValues = {
   email: string
   password: string
 }
+
+export type FormValuesCompany = {
+  companyName: string;
+  email: string;
+  companyCertificate: FileList;
+};
+
+export type InsertData = {
+  table: string;
+  data: any;
+}
