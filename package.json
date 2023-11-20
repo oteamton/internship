@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "dotenv": "^16.3.1",
+    "mysql2": "^3.6.3",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
