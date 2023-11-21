@@ -58,22 +58,6 @@ const Home: React.FC = () => {
         <p>Welcome to SWU Internship <br /> This is an open source project </p>
       </section>
 
-      <section className={styles.wrapper_login}>
-        <div className={styles.content_login}>
-          <h1>Login to <span id={styles.heading}>SWU <span>Internship</span></span></h1>
-
-          <label htmlFor="email">Email</label>
-          <input type="text" {...register('email')} />
-          <p className={styles.error}>{errors.email?.message}</p>
-
-          <label htmlFor="email">Password</label>
-          <input type="password" {...register('password')} />
-          <p className={styles.error}>{errors.password?.message}</p>
-
-          <button className={styles.btn} onClick={handleSubmit(onSubmit, onError)}>Login</button>
-        </div>
-      </section>
-
     </div >
   );
 };
