@@ -20,6 +20,9 @@ body {
   --white-color: #fff;
   --text-color: #f8f5ec;
   --safe-red: #c1272d;
-
-  --title:6rem;
+  --accent-color: #33ff00; /* Accent color */
+  /* font size */
+  --title: 5rem;
+  --subtitle: 3rem;
+  --text: 1rem;
 }

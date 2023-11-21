@@ -28,35 +28,32 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <header>
+        <img src="https://swu.ac.th/images/swu_logo_v3.png" alt="" />
+        <nav>
+          <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
+          <Link href="/users">Contact</Link> {' '}
+          {/* <a href="/api/users">Users API</a> */}
+        </nav>
+      </header>
 
       <section className={styles.wrapper_register}>
-        {/* <BackgroundImage /> */}
+        <h1 className={styles.heading}>SWU <span>Internship</span></h1>
         <div className={styles.content_register}>
-          <h1 className={styles.heading}>SWU <span>Internship</span></h1>
-          <div>
-            <Link href="/student"><button className={styles.btn}>Student</button></Link>
-            <Link href="/company"><button className={styles.btn}>Company</button></Link>
-          </div>
+          <img src='https://p7.hiclipart.com/preview/643/201/294/stick-figure-student-presentation-study-skills-animation-think.jpg' />
+          <img src='https://p7.hiclipart.com/preview/643/201/294/stick-figure-student-presentation-study-skills-animation-think.jpg' />
+          <button className={styles.btn_stu}><Link href="/student">Student</Link></button>
+          <button className={styles.btn_com}><Link href="/company">Company</Link></button>
         </div>
       </section>
 
-      <section className={styles.wrapper_partners}>
-        <h1>About</h1>
-        <div className={styles.content_partners}>
-
-          <div className={styles.content_img}>
-            <div className={styles.img}>
-              <img src="" alt="1" />
-              <img src="" alt="2" />
-              <img src="" alt="3" />
-              <img src="" alt="4" />
-              <img src="" alt="5" />
-            </div>
-          </div>
-
-        </div>
-        <p>Welcome to SWU Internship <br /> This is an open source project </p>
+      <section className={styles.wrapper_img}>
+        <img src='https://static.licdn.com/aero-v1/sc/h/dxf91zhqd2z6b0bwg85ktm5s4' />
       </section>
+
+      <footer>
+        <span>I'm here to stay (Footer)</span>
+      </footer>
 
     </div >
   );
