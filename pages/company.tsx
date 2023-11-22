@@ -4,10 +4,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styles from '../styles/company.module.css';
 import { FormValuesCompany } from '../interfaces';
-import { connToDatabase, disconnFromDB } from '../utils/db';
 
 const CompanyRegistration: React.FC = () => {
     const [apiResponse, setApiResponse] = useState<string | null>(null);
+    const [columnMapping, setColumnMapping] = useState<Record<string, string>>({
+        companyName: 'company_name',
+        email: 'company_email',
+        companyCertificate: 'company_certificate',
+    });
     const validationSchema = yup.object().shape({
         companyName: yup.string().required('Company name is required'),
         email: yup.string().email('Invalid email').required('Email is required'),
@@ -20,16 +24,24 @@ const CompanyRegistration: React.FC = () => {
 
     const onSubmit: SubmitHandler<FormValuesCompany> = async (data) => {
         try {
+            const mappedData = Object.keys(data).reduce((acc, key) => {
+                const columnName = columnMapping[key] || key;
+                acc[columnName] = data[key];
+                return acc;
+            }, {});
+
             // Convert img file to buffer
             const companyCertificate = data.companyCertificate[0];
             const imgBuffer = Buffer.from(await companyCertificate.arrayBuffer());
 
+            console.log('Image Buffer:', imgBuffer);
+
             // Create a new obj with img budffer
             const dataWithImg = {
-                ...data,
-                companyCertificate: imgBuffer,
+                ...mappedData,
+                company_certificate: imgBuffer,
             };
-
+            console.log('Data with img:', dataWithImg);
             // Post to serverless function
             const response = await fetch('api/postData', {
                 method: 'POST',
@@ -39,6 +51,7 @@ const CompanyRegistration: React.FC = () => {
                 body: JSON.stringify({
                     table: 'swu_intern_company',
                     data: dataWithImg,
+                    fileData: dataWithImg.company_certificate,
                 }),
             });
 
@@ -61,7 +74,7 @@ const CompanyRegistration: React.FC = () => {
             <h1 className={styles.heading}>Company</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.content}>
-                    <label htmlFor="username">Company name</label>
+                    <label htmlFor="companyName">Company name</label>
                     <input type="text" {...register('companyName')} />
                     <p>{errors.companyName?.message}</p>
 

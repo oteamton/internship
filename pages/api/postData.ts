@@ -12,10 +12,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 return res.status(400).json({ success: false, message: 'Invalid request body' });
             }
 
-            const placeholders = Object.keys(data).map(() => '?').join(',');
+            const placeHolders = Object.keys(data).map(() => '?').join(',');
             const columns = Object.keys(data).join(',');
 
-            const query = `INSERT INTO ${table} (${columns}) VALUES (${placeholders})`;
+            const query = `INSERT INTO ${table} (${columns}) VALUES (${placeHolders})`;
             console.log('Executing query:', query);
             const [results] = await conn.execute(query, Object.values(data));
 
@@ -24,7 +24,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(200).json({ success: true, message: 'Data inserted successfully' });
         } catch (error) {
             console.error('Error inserting data:', error);
-            // console.error('Failed query:', query);
             res.status(500).json({ success: false, message: 'Internal Server Error' });
         } finally {
             await disconnFromDB();
@@ -32,4 +31,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } else {
         res.status(405).json({ success: false, message: 'Method Not Allowed' });
     }
-}
+};
