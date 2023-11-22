@@ -20,6 +20,10 @@ export type FormValuesCompany = {
   companyCertificate: FileList;
 };
 
+export type FormValuesStudent = {
+  email: string;
+};
+
 export type InsertData = {
   table: string;
   data: any;
