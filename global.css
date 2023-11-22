@@ -21,6 +21,8 @@ body {
   --text-color: #f8f5ec;
   --safe-red: #c1272d;
   --accent-color: #33ff00; /* Accent color */
+  --btn-blue-color: #0a66c2;
+  --btn-blue-color-hover: #004182;
   /* font size */
   --title: 5rem;
   --subtitle: 3rem;
