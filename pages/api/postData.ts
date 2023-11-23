@@ -1,13 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { connToDatabase, disconnFromDB } from "../../utils/db";
 import { InsertData } from "../../interfaces";
+import { getSharePointAccessToken, uploadFileToSharePoint } from "../../utils/sharepointUtils";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const conn = await connToDatabase();
 
         try {
-            const { table, data } = req.body as InsertData;
+            const { table, data, fileBase64 } = req.body as InsertData;
+            
+                
             if (!table || !data) {
                 return res.status(400).json({ success: false, message: 'Invalid request body' });
             }

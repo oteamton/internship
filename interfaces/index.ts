@@ -27,4 +27,5 @@ export type FormValuesStudent = {
 export type InsertData = {
   table: string;
   data: any;
+  fileBase64: any;
 }
